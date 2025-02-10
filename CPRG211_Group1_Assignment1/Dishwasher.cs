@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CPRG211_Group1_Assignment1
 {
-    public class Dishwasher
+    public class Dishwasher : Appliance
     {
         
         
@@ -17,7 +17,7 @@ namespace CPRG211_Group1_Assignment1
         //private string feature;
         //private string soundRating;
 
-        public int ItemNumber {  get; set; }
+        public string ItemNumber {  get; set; }
         public string Brand {  get; set; }
         public int Quantity { get { return quantity; } set { quantity = value; } }
         public int Wattage { get; set; }
@@ -26,7 +26,7 @@ namespace CPRG211_Group1_Assignment1
         public string Feature {  get; set; }
         public string SoundRating {  get; set; }
 
-        public Dishwasher(int itemNumber, string brand, int quantity, int wattage, string colour, double price, string feature, string soundRating)
+        public Dishwasher(string itemNumber, string brand, int quantity, int wattage, string colour, double price, string feature, string soundRating)
         {
             this.ItemNumber = itemNumber;
             this.Brand = brand;
