@@ -10,24 +10,25 @@ namespace CPRG211_Group1_Assignment1
     {
         private int quantity;
 
-        public string ItemNumber { get; set; }
-        public string Brand { get; set; }
+        //public string ItemNumber { get; set; }
+        //public string Brand { get; set; }
         public int Quantity { get { return quantity; } set { quantity = value; } }
-        public int Wattage { get; set; }
-        public string Colour { get; set; }
-        public double Price { get; set; }
+        //public int Wattage { get; set; }
+        //public string Colour { get; set; }
+        //public double Price { get; set; }
         public string DoorsNumber { get; set; }
         public int Height { get; set; }
         public int Width { get; set; }
 
-        public Refrigerator(string itemNumber, string brand, int quantity, int wattage, string colour, double price, string doors, int height, int width)
+        public Refrigerator(string itemNumber, string brand, int quantity, int wattage, string colour, double price, string doors, int height, int width) :
+            base(itemNumber, brand, wattage, colour, price)
         {
-            this.ItemNumber = itemNumber;
-            this.Brand = brand;
+            //this.ItemNumber = itemNumber;
+            //this.Brand = brand;
             this.Quantity = quantity;
-            this.Wattage = wattage;
-            this.Colour = colour;
-            this.Price = price;
+            //this.Wattage = wattage;
+            //this.Colour = colour;
+            //this.Price = price;
             this.Height = height;
             this.Width = width;
             if(doors == "2")
