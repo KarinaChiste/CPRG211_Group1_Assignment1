@@ -1,5 +1,6 @@
-﻿
+﻿using CPRG211_Group1_Assignment1;
 // INSERT APPLIANCES.TXT TO LIST HERE
+
 
 while (true)
 {
@@ -24,7 +25,16 @@ while (true)
     else if (option == "4")
     {
         //INSERT PRODUCE RANDOM APPLIANCE LIST HERE 
-
+        Console.WriteLine("Enter number of appliances:");
+        string length1 = Console.ReadLine();
+        int length = Convert.ToInt32(length1);
+        Console.WriteLine("Random Appliances:");
+        int i = 0;
+        while (i < length)
+        {
+            Random random = new Random();
+            appliances[random.Next(1, appliances.Count)].ToString();
+        }
     }
     else if(option == "5")
     {
@@ -36,3 +46,4 @@ while (true)
         Console.WriteLine("Please enter valid option");
     }
 }
+

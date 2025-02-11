@@ -8,5 +8,6 @@ namespace CPRG211_Group1_Assignment1
 {
     public class Appliance
     {
+        
     }
 }
