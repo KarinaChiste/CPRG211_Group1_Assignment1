@@ -16,7 +16,19 @@ while (true)
     }
     else if (option == "2")
     {
+        // add appliance objects into list
+        List<Appliance> applianceList = new List<Appliance>();
         //INSERT FIND APPLIANCES BY BRAND HERE
+        Console.WriteLine("Enter brand to search for:");
+        string brand = Console.ReadLine();
+        Console.WriteLine("Matching Appliances:");
+        var newList = applianceList.FindAll(item => item.brand == brand);
+
+        foreach (Appliance appliance in newList)
+        {
+            Console.WriteLine(appliance);
+        }
+
     }
     else if (option == "3")
     {
