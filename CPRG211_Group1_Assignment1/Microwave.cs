@@ -25,11 +25,11 @@ internal class Microwave : Appliance
     public override string ToString()
     {
         return $"Item number: {ItemNumber}\n" +
-                $"Brand: {Brand}\n" +
-                "Quantity: {Quantity}\n" +
-                $"Wattage: {Wattage}\n" +
-                $"Colour: {Colour}\n" +
-                $"Price: {Price}";
+               $"Brand: {Brand}\n" +
+               $"Quantity: {Quantity}\n" +
+               $"Wattage: {Wattage}\n" +
+               $"Colour: {Colour}\n" +
+               $"Price: {Price}";
     }
 }
 
