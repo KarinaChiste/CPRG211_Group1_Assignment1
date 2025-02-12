@@ -19,7 +19,7 @@ internal class Microwave : Appliance
     }
     public string FormatToFile()
     {
-        return $"{ItemNumber};{Brand};{Quantity};{Wattage};{Colour};{Price};{Capacity};{RoomType}"
+        return $"{ItemNumber};{Brand};{Quantity};{Wattage};{Colour};{Price};{Capacity};{RoomType}";
     }
 
     public override string ToString()
