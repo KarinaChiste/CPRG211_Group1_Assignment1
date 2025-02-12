@@ -15,24 +15,28 @@ while (true)
     {
         //INSERT CHECK OUT APPLIANCE HERE
     }
+
     else if (option == "2")
     {
-        //INSERT FIND APPLIANCES BY BRAND HERE
+        // find appliances by brand method
+        // ask user for appliance brand
         Console.WriteLine("Enter brand to search for:");
         string brand = Console.ReadLine();
 
         Console.WriteLine("Matching Appliances:");
+        // create new list with all items from appliance list that match user input
         var newList = appliances.FindAll(item => item.Brand == brand);
 
+        // display appliance information for found items
         foreach (Appliance appliance in newList)
         {
             Console.WriteLine(appliance);
         }
-
     }
     else if (option == "3")
     {
-        //INSERT DISPLAY APPLIANCES BY TYPE HERE
+        // find appliances by type method
+        // ask user for appliance type
         Console.WriteLine("Appliance Types");
         Console.WriteLine("1 - Refrigerators");
         Console.WriteLine("2 - Vacuums");
@@ -46,8 +50,10 @@ while (true)
             string numberofDoors = Console.ReadLine();
 
             Console.WriteLine("Matching refrigerators:");
+            // create new list with all items from appliance list that match user input (cast Refrigerator class)
             var newList = appliances.FindAll(item => item is Refrigerator refrigerator && refrigerator.DoorsNumber == numberofDoors);
 
+            // display appliance information for found items
             foreach (Appliance appliance in newList)
             {
                 Console.WriteLine(appliance);
@@ -60,9 +66,10 @@ while (true)
             string voltageValue = Console.ReadLine();
 
             Console.WriteLine("Matching vacuums:");
-            //var newList = appliances.FindAll(item => item.Voltage == voltageValue);
+            // create new list with all items from appliance list that match user input (cast Vacuum class)
             var newList = appliances.FindAll(item => item is Vacuum vacuum && vacuum.Voltage == voltageValue);
 
+            // display appliance information for found items
             foreach (Appliance appliance in newList)
             {
                 Console.WriteLine(appliance);
@@ -75,8 +82,10 @@ while (true)
             string microwaveRoom = Console.ReadLine();
 
             Console.WriteLine("Matching microwaves:");
+            // create new list with all items from appliance list that match user input (cast Microwave class)
             var newList = appliances.FindAll(item => item is Microwave microwave && microwave.RoomType == microwaveRoom);
 
+            // display appliance information for found items
             foreach (Appliance appliance in newList)
             {
                 Console.WriteLine(appliance);
@@ -89,14 +98,17 @@ while (true)
             string sound = Console.ReadLine();
 
             Console.WriteLine("Matching dishwashers:");
+            // create new list with all items from appliance list that match user input (cast Dishwasher class)
             var newList = appliances.FindAll(item => item is Dishwasher dishwasher && dishwasher.SoundRating == sound);
 
+            // display appliance information for found items
             foreach (Appliance appliance in newList)
             {
                 Console.WriteLine(appliance);
             }
         }
-
+        
+        // display error message if anything other than 1-5 entered
         else
         {
             Console.WriteLine("Please enter a valid option");

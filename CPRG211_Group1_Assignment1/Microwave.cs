@@ -2,6 +2,7 @@
 
     internal class Microwave : Appliance
     {
+        // create Microwave attributes
         private int _capacity;
 
         private string _roomType;
@@ -11,17 +12,21 @@
         public string RoomTypeWorkSite = "W";
         public string DisplayRoomType { get; set; }
 
+        // constructor
         public Microwave(string itemNumber, int quantity, string brand, int wattage, string colour, double price, int capacity, string roomType)
             : base(itemNumber, brand, quantity, wattage, colour, price)
         {
             this.Capacity = capacity;
             this.RoomType = roomType;
         }
+
+        // FormatToFile method
         public string FormatToFile()
         {
             return $"{ItemNumber};{Brand};{Quantity};{Wattage};{Colour};{Price};{Capacity};{RoomType}";
         }
-
+        
+        // ToString method
         public override string ToString()
         {
             return $"Item number: {ItemNumber}\n" +
