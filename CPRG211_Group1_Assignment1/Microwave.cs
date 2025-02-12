@@ -11,8 +11,8 @@
         public string RoomTypeWorkSite = "W";
         public string DisplayRoomType { get; set; }
 
-        public Microwave(int itemNumber, string brand, int quantity, int wattage, string colour, int price, int capacity, string roomType)
-            : base(itemNumber, quantity, brand, wattage, colour, price)
+        public Microwave(string itemNumber, int quantity, string brand, int wattage, string colour, double price, int capacity, string roomType)
+            : base(itemNumber, brand, quantity, wattage, colour, price)
         {
             this.Capacity = capacity;
             this.RoomType = roomType;
@@ -29,7 +29,9 @@
                    $"Quantity: {Quantity}\n" +
                    $"Wattage: {Wattage}\n" +
                    $"Colour: {Colour}\n" +
-                   $"Price: {Price}";
+                   $"Price: {Price}\n" + 
+                   $"Capacity: {Capacity}\n" +
+                   $"Room Type: {RoomType}";
         }
     }
 

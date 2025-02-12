@@ -1,6 +1,7 @@
 ﻿using CPRG211_Group1_Assignment1;
-// INSERT APPLIANCES.TXT TO LIST HERE
 
+// INSERT APPLIANCES.TXT TO LIST HERE
+List<Appliance> appliances = new List<Appliance>();
 
 while (true)
 {
@@ -16,13 +17,12 @@ while (true)
     }
     else if (option == "2")
     {
-        // add appliance objects into list
-        List<Appliance> applianceList = new List<Appliance>();
         //INSERT FIND APPLIANCES BY BRAND HERE
         Console.WriteLine("Enter brand to search for:");
         string brand = Console.ReadLine();
+
         Console.WriteLine("Matching Appliances:");
-        var newList = applianceList.FindAll(item => item.brand == brand);
+        var newList = appliances.FindAll(item => item.Brand == brand);
 
         foreach (Appliance appliance in newList)
         {
@@ -32,7 +32,74 @@ while (true)
     }
     else if (option == "3")
     {
-       //INSERT DISPLAY APPLIANCES BY TYPE HERE
+        //INSERT DISPLAY APPLIANCES BY TYPE HERE
+        Console.WriteLine("Appliance Types");
+        Console.WriteLine("1 - Refrigerators");
+        Console.WriteLine("2 - Vacuums");
+        Console.WriteLine("3 - Microwaves");
+        Console.WriteLine("4 - Dishwashers");
+        string applianceOption = Console.ReadLine();
+
+        if (applianceOption == "1")
+        {
+            Console.WriteLine("Enter number of doors: 2 (double door), 3 (three doors), or 4 (four doors):");
+            string numberofDoors = Console.ReadLine();
+
+            Console.WriteLine("Matching refrigerators:");
+            var newList = appliances.FindAll(item => item.DoorsNumber == numberofDoors);
+
+            foreach (Appliance appliance in newList)
+            {
+                Console.WriteLine(appliance);
+            }
+        }
+
+        else if (applianceOption == "2")
+        {
+            Console.WriteLine("Enter battery voltage value: 18 V (low) or 24 V (high)");
+            string voltageValue = Console.ReadLine();
+
+            Console.WriteLine("Matching vacuums:");
+            var newList = appliances.FindAll(item => item.Voltage == voltageValue);
+
+            foreach (Appliance appliance in newList)
+            {
+                Console.WriteLine(appliance);
+            }
+        }
+
+        else if (applianceOption == "3")
+        {
+            Console.WriteLine("Room where the microwave will be installed: K (kitchen) or W (work site):");
+            string microwaveRoom = Console.ReadLine();
+
+            Console.WriteLine("Matching microwaves:");
+            var newList = appliances.FindAll(item => item.RoomType == microwaveRoom);
+
+            foreach (Appliance appliance in newList)
+            {
+                Console.WriteLine(appliance);
+            }
+        }
+
+        else if (applianceOption == "4")
+        {
+            Console.WriteLine("Enter the sound rating of the dishwasher: Qt (Quietest), Qr (Quieter), Qu(Quiet) or M (Moderate):");
+            string sound = Console.ReadLine();
+
+            Console.WriteLine("Matching dishwashers:");
+            var newList = appliances.FindAll(item => item.SoundRating == sound);
+
+            foreach (Appliance appliance in newList)
+            {
+                Console.WriteLine(appliance);
+            }
+        }
+
+        else
+        {
+            Console.WriteLine("Please enter a valid option");
+        }
     }
     else if (option == "4")
     {
