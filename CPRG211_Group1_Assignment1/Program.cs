@@ -1,6 +1,46 @@
 ﻿using CPRG211_Group1_Assignment1;
 // INSERT APPLIANCES.TXT TO LIST HERE
 
+const string PATH = @"..\..\..\res\appliances.txt";
+const string SEP = ";";
+List<Appliance> ReadFile()
+{
+    List<Appliance> appliances = new List<Appliance>();
+    string line;
+    string[] details;
+    string itemNum;
+
+    StreamReader read = new StreamReader(PATH);
+
+    while (!read.EndOfStream)
+    {
+        line = read.ReadLine()!;
+        details = line.Split(SEP);
+        itemNum = details[0];
+
+        if (itemNum.StartsWith("1"))
+        {
+            appliances.Add(new Refrigerator(details[0], details[1], int.Parse(details[2]), int.Parse(details[3]), details[4], double.Parse(details[5]), details[6], int.Parse(details[7]), int.Parse(details[8])));
+        }
+        else if (itemNum.StartsWith("2"))
+        {
+            appliances.Add(new Vacuum(details[0], details[1], int.Parse(details[2]), int.Parse(details[3]), details[4], double.Parse(details[5]), details[6], int.Parse(details[7])));
+        }
+        else if (itemNum.StartsWith("3"))
+        {
+            appliances.Add(new Microwave(details[0], details[1], int.Parse(details[2]), int.Parse(details[3]), details[4], double.Parse(details[5]), double.Parse(details[6]), details[7]));
+        }
+        else if (itemNum.StartsWith("4") || itemNum.StartsWith("5"))
+        {
+            appliances.Add(new Dishwasher(details[0], details[1], int.Parse(details[2]), int.Parse(details[3]), details[4], double.Parse(details[5]), details[6], details[7]));
+        }
+
+    }
+
+    return appliances;
+}
+
+List<Appliance> appliances = ReadFile();
 
 while (true)
 {
@@ -22,7 +62,7 @@ while (true)
         Console.WriteLine("Enter brand to search for:");
         string brand = Console.ReadLine();
         Console.WriteLine("Matching Appliances:");
-        var newList = applianceList.FindAll(item => item.brand == brand);
+        var newList = applianceList.FindAll(item => item.Brand == brand);
 
         foreach (Appliance appliance in newList)
         {
