@@ -25,7 +25,8 @@ while (true)
 
         Console.WriteLine("Matching Appliances:");
         // create new list with all items from appliance list that match user input
-        var newList = appliances.FindAll(item => item.Brand == brand);
+        // make user input case-insensitive by comparing using OrdinalIgnoreCase
+        var newList = appliances.FindAll(item => string.Equals(item.Brand, brand, StringComparison.OrdinalIgnoreCase));
 
         // display appliance information for found items
         foreach (Appliance appliance in newList)
@@ -38,15 +39,13 @@ while (true)
         // find appliances by type method
         // ask user for appliance type
         Console.WriteLine("Appliance Types");
-        Console.WriteLine("1 - Refrigerators");
-        Console.WriteLine("2 - Vacuums");
-        Console.WriteLine("3 - Microwaves");
-        Console.WriteLine("4 - Dishwashers");
+        Console.WriteLine("1 - Refrigerators\n2 - Vacuums\n3 - Microwaves\n4 - Dishwashers");
+        Console.WriteLine("Enter type of appliance:");
         string applianceOption = Console.ReadLine();
 
         if (applianceOption == "1")
         {
-            Console.WriteLine("Enter number of doors: 2 (double door), 3 (three doors), or 4 (four doors):");
+            Console.WriteLine("Enter number of doors - 2 (double door), 3 (three doors), or 4 (four doors):");
             string numberofDoors = Console.ReadLine();
 
             Console.WriteLine("Matching refrigerators:");
@@ -62,7 +61,7 @@ while (true)
 
         else if (applianceOption == "2")
         {
-            Console.WriteLine("Enter battery voltage value: 18 V (low) or 24 V (high)");
+            Console.WriteLine("Enter battery voltage value - 18 V (low) or 24 V (high):");
             string voltageValue = Console.ReadLine();
 
             Console.WriteLine("Matching vacuums:");
@@ -78,12 +77,13 @@ while (true)
 
         else if (applianceOption == "3")
         {
-            Console.WriteLine("Room where the microwave will be installed: K (kitchen) or W (work site):");
+            Console.WriteLine("Room where the microwave will be installed - K (kitchen) or W (work site):");
             string microwaveRoom = Console.ReadLine();
 
             Console.WriteLine("Matching microwaves:");
             // create new list with all items from appliance list that match user input (cast Microwave class)
-            var newList = appliances.FindAll(item => item is Microwave microwave && microwave.RoomType == microwaveRoom);
+            // make user input case-insensitive by comparing using OrdinalIgnoreCase
+            var newList = appliances.FindAll(item => item is Microwave microwave && string.Equals(microwave.RoomType, microwaveRoom, StringComparison.OrdinalIgnoreCase));
 
             // display appliance information for found items
             foreach (Appliance appliance in newList)
@@ -94,12 +94,13 @@ while (true)
 
         else if (applianceOption == "4")
         {
-            Console.WriteLine("Enter the sound rating of the dishwasher: Qt (Quietest), Qr (Quieter), Qu(Quiet) or M (Moderate):");
+            Console.WriteLine("Enter the sound rating of the dishwasher - Qt (Quietest), Qr (Quieter), Qu (Quiet) or M (Moderate):");
             string sound = Console.ReadLine();
 
             Console.WriteLine("Matching dishwashers:");
             // create new list with all items from appliance list that match user input (cast Dishwasher class)
-            var newList = appliances.FindAll(item => item is Dishwasher dishwasher && dishwasher.SoundRating == sound);
+            // make user input case-insensitive by comparing using OrdinalIgnoreCase
+            var newList = appliances.FindAll(item => item is Dishwasher dishwasher && string.Equals(dishwasher.SoundRating, sound, StringComparison.OrdinalIgnoreCase));
 
             // display appliance information for found items
             foreach (Appliance appliance in newList)
