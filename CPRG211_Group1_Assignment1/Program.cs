@@ -33,7 +33,9 @@ while (true)
         while (i < length)
         {
             Random random = new Random();
-            appliances[random.Next(1, appliances.Count)].ToString();
+            Console.WriteLine(appliances[random.Next(1, appliances.Count)].ToString());
+            i++;
+            
         }
     }
     else if(option == "5")
