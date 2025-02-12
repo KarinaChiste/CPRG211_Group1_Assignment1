@@ -14,6 +14,7 @@ namespace CPRG211_Group1_Assignment1
         public int Wattage { get; set; }
         public string Colour { get; set; }
         public double Price { get; set; }
+        public int Quantity { get; set; }
 
         public Appliance(string itemNumber, string brand, int wattage, string colour, double price)
         {
