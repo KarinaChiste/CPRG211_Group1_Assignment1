@@ -46,7 +46,7 @@ while (true)
             string numberofDoors = Console.ReadLine();
 
             Console.WriteLine("Matching refrigerators:");
-            var newList = appliances.FindAll(item => item.DoorsNumber == numberofDoors);
+            var newList = appliances.FindAll(item => item is Refrigerator refrigerator && refrigerator.DoorsNumber == numberofDoors);
 
             foreach (Appliance appliance in newList)
             {
@@ -60,7 +60,8 @@ while (true)
             string voltageValue = Console.ReadLine();
 
             Console.WriteLine("Matching vacuums:");
-            var newList = appliances.FindAll(item => item.Voltage == voltageValue);
+            //var newList = appliances.FindAll(item => item.Voltage == voltageValue);
+            var newList = appliances.FindAll(item => item is Vacuum vacuum && vacuum.Voltage == voltageValue);
 
             foreach (Appliance appliance in newList)
             {
@@ -74,7 +75,7 @@ while (true)
             string microwaveRoom = Console.ReadLine();
 
             Console.WriteLine("Matching microwaves:");
-            var newList = appliances.FindAll(item => item.RoomType == microwaveRoom);
+            var newList = appliances.FindAll(item => item is Microwave microwave && microwave.RoomType == microwaveRoom);
 
             foreach (Appliance appliance in newList)
             {
@@ -88,7 +89,7 @@ while (true)
             string sound = Console.ReadLine();
 
             Console.WriteLine("Matching dishwashers:");
-            var newList = appliances.FindAll(item => item.SoundRating == sound);
+            var newList = appliances.FindAll(item => item is Dishwasher dishwasher && dishwasher.SoundRating == sound);
 
             foreach (Appliance appliance in newList)
             {
