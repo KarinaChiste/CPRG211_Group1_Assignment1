@@ -5,8 +5,8 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CPRG211_Group1_Assignment1
-{
+namespace CPRG211_Group1_Assignment1;
+
     public class Refrigerator : Appliance
     {
         //private int quantity;
@@ -51,11 +51,12 @@ namespace CPRG211_Group1_Assignment1
             }
             door = doors;
 
-        }
+       
 
-        public override string ToString()
-        {
-            return $" ItemNumber: {ItemNumber} \nBrand: {Brand} \nQuantity: {Quantity} \nWattage: {Wattage} \nColour: {Colour} \nPrice: {Price} \nNumber of Doors: {DoorsNumber} \nHeight: {Height} \nWidth: {Width}";
-        }
+    }
+
+    public override string ToString()
+    {
+        return $" ItemNumber: {ItemNumber} \nBrand: {Brand} \nQuantity: {Quantity} \nWattage: {Wattage} \nColour: {Colour} \nPrice: {Price} \nNumber of Doors: {DoorsNumber} \nHeight: {Height} \nWidth: {Width}";
     }
 }

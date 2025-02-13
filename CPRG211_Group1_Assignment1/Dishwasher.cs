@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CPRG211_Group1_Assignment1
-{
+namespace CPRG211_Group1_Assignment1;
+
+
     public class Dishwasher : Appliance
     {
 
@@ -53,14 +54,16 @@ namespace CPRG211_Group1_Assignment1
             {
                 this.SoundRating = "Moderate";
             }
-            sound = soundRating;
-
-        }
-
-        public override string ToString()
-        {
-            return $" ItemNumber: {ItemNumber} \nBrand: {Brand} \nQuantity: {Quantity} \nWattage: {Wattage} \nColour: {Colour} \nPrice: {Price} \nFeature:{Feature} \nSoundRating: {SoundRating}";
-        }
+            sound = soundRating
+        
 
     }
+
+
+    public override string ToString()
+    {
+        return $" ItemNumber: {ItemNumber} \nBrand: {Brand} \nQuantity: {Quantity} \nWattage: {Wattage} \nColour: {Colour} \nPrice: {Price} \nFeature:{Feature} \nSoundRating: {SoundRating}";
+    }
+
 }
+
