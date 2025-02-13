@@ -8,11 +8,11 @@ namespace CPRG211_Group1_Assignment1
 {
     public class Dishwasher : Appliance
     {
-        
-        
+
+
         //private int quantity;
         //private int wattage;
-        
+        public string sound;
         //private double price;
         //private string feature;
         //private string soundRating;
@@ -52,7 +52,7 @@ namespace CPRG211_Group1_Assignment1
             {
                 this.SoundRating = "Moderate";
             }
-            
+            sound = soundRating;
 
         }
 

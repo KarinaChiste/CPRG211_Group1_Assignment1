@@ -92,7 +92,7 @@ while (true)
 
             Console.WriteLine("Matching refrigerators:");
             // create new list with all items from appliance list that match user input (cast Refrigerator class)
-            var newList = appliances.FindAll(item => item is Refrigerator refrigerator && refrigerator.DoorsNumber == numberofDoors);
+            var newList = appliances.FindAll(item => item is Refrigerator refrigerator && refrigerator.door == numberofDoors);
 
             // display appliance information for found items
             foreach (Appliance appliance in newList)
@@ -142,7 +142,7 @@ while (true)
             Console.WriteLine("Matching dishwashers:");
             // create new list with all items from appliance list that match user input (cast Dishwasher class)
             // make user input case-insensitive by comparing using OrdinalIgnoreCase
-            var newList = appliances.FindAll(item => item is Dishwasher dishwasher && string.Equals(dishwasher.SoundRating, sound, StringComparison.OrdinalIgnoreCase));
+            var newList = appliances.FindAll(item => item is Dishwasher dishwasher && string.Equals(dishwasher.sound, sound, StringComparison.OrdinalIgnoreCase));
 
             // display appliance information for found items
             foreach (Appliance appliance in newList)
