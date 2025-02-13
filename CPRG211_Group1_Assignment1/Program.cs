@@ -104,11 +104,11 @@ while (true)
         else if (applianceOption == "2")
         {
             Console.WriteLine("Enter battery voltage value - 18 V (low) or 24 V (high):");
-            string voltageValue = Console.ReadLine();
+            int voltageValue = int.Parse(Console.ReadLine());
 
             Console.WriteLine("Matching vacuums:");
             // create new list with all items from appliance list that match user input (cast Vacuum class)
-            var newList = appliances.FindAll(item => item is Vacuum vacuum && vacuum.Voltage == voltageValue);
+            var newList = appliances.FindAll(item => item is Vacuum vacuum && vacuum.BatteryVoltage == voltageValue);
 
             // display appliance information for found items
             foreach (Appliance appliance in newList)

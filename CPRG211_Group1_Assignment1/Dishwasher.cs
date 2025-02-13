@@ -10,7 +10,7 @@ namespace CPRG211_Group1_Assignment1
     {
         
         
-        private int quantity;
+        //private int quantity;
         //private int wattage;
         
         //private double price;
@@ -19,7 +19,7 @@ namespace CPRG211_Group1_Assignment1
 
         //public string ItemNumber {  get; set; }
         //public string Brand {  get; set; }
-        public int Quantity { get { return quantity; } set { quantity = value; } }
+        //public int Quantity { get { return quantity; } set { quantity = value; } }
         //public int Wattage { get; set; }
         //public string Colour { get; set; }
         //public double Price { get; set; }
@@ -27,11 +27,11 @@ namespace CPRG211_Group1_Assignment1
         public string SoundRating {  get; set; }
 
         public Dishwasher(string itemNumber, string brand, int quantity, int wattage, string colour, double price, string feature, string soundRating):
-            base(itemNumber, brand, wattage, colour, price)
+            base(itemNumber, brand, quantity, wattage, colour, price)
         {
             //this.ItemNumber = itemNumber;
             //this.Brand = brand;
-            this.Quantity = quantity;
+            //this.Quantity = quantity;
             //this.Wattage = wattage;
             //this.Colour = colour;
             //this.Price = price;

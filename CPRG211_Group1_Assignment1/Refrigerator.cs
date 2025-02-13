@@ -21,7 +21,7 @@ namespace CPRG211_Group1_Assignment1
         public int Width { get; set; }
 
         public Refrigerator(string itemNumber, string brand, int quantity, int wattage, string colour, double price, string doors, int height, int width) :
-            base(itemNumber, brand, wattage, colour, price)
+            base(itemNumber, brand,quantity, wattage, colour, price)
         {
             //this.ItemNumber = itemNumber;
             //this.Brand = brand;
