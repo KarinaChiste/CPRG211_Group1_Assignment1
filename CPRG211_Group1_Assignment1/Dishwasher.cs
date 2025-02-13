@@ -26,6 +26,7 @@ namespace CPRG211_Group1_Assignment1
         public string Feature { get; set; }
         public string SoundRating { get; set; }
 
+
         public Dishwasher(string itemNumber, string brand, int quantity, int wattage, string colour, double price, string feature, string soundRating) :
             base(itemNumber, brand, quantity, wattage, colour, price)
         {

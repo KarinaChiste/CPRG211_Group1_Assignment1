@@ -14,6 +14,7 @@ namespace CPRG211_Group1_Assignment1
 
         public Vacuum(string itemNumber, string brand, int quantity, int wattage, string colour, double price, string grade, int batteryVoltage) :
             base(itemNumber, brand, quantity, wattage, colour, price)
+
         {
             this.Quantity = quantity;
             this.Grade = grade;
