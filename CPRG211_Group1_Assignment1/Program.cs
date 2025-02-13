@@ -1,7 +1,47 @@
 ﻿using CPRG211_Group1_Assignment1;
 
-// INSERT APPLIANCES.TXT TO LIST HERE
-List<Appliance> appliances = new List<Appliance>();
+
+const string PATH = @"..\..\..\res\appliances.txt";
+const string SEP = ";";
+List<Appliance> ReadFile()
+{
+    List<Appliance> appliances = new List<Appliance>();
+    string line;
+    string[] details;
+    string itemNum;
+
+    StreamReader read = new StreamReader(PATH);
+
+    while (!read.EndOfStream)
+    {
+        line = read.ReadLine()!;
+        details = line.Split(SEP);
+        itemNum = details[0];
+
+        if (itemNum.StartsWith("1"))
+        {
+            appliances.Add(new Refrigerator(details[0], details[1], int.Parse(details[2]), int.Parse(details[3]), details[4], double.Parse(details[5]), details[6], int.Parse(details[7]), int.Parse(details[8])));
+        }
+        else if (itemNum.StartsWith("2"))
+        {
+            appliances.Add(new Vacuum(details[0], details[1], int.Parse(details[2]), int.Parse(details[3]), details[4], double.Parse(details[5]), details[6], int.Parse(details[7])));
+        }
+        else if (itemNum.StartsWith("3"))
+        {
+            appliances.Add(new Microwave(details[0], details[1], int.Parse(details[2]), int.Parse(details[3]), details[4], double.Parse(details[5]), double.Parse(details[6]), details[7]));
+        }
+        else if (itemNum.StartsWith("4") || itemNum.StartsWith("5"))
+        {
+            appliances.Add(new Dishwasher(details[0], details[1], int.Parse(details[2]), int.Parse(details[3]), details[4], double.Parse(details[5]), details[6], details[7]));
+        }
+
+    }
+
+    return appliances;
+}
+
+List<Appliance> appliances = ReadFile();
+
 
 while (true)
 {
@@ -13,7 +53,30 @@ while (true)
 
     if (option == "1")
     {
-        //INSERT CHECK OUT APPLIANCE HERE
+        // takes user input for item number
+        Console.Write("Enter the item number of an appliance: ");
+        string itemNumber = Console.ReadLine();
+
+        // searches appliances list and compares if user input exists
+        Appliance appliance = appliances.Find(a => a.ItemNumber == itemNumber);
+
+        // if statements to validate if the item number exists or not
+        if (appliance == null)
+        {
+            Console.WriteLine("No appliances found with that item number.");
+            continue;
+        }
+
+        if (appliance.Quantity > 0)
+        {
+            appliance.Quantity--;
+            Console.WriteLine($"Appliance {itemNumber} has been checked out.");
+        }
+        else
+        {
+            Console.WriteLine("The appliance is not available to be checked out.");
+        }
+
     }
 
     else if (option == "2")
@@ -24,9 +87,11 @@ while (true)
         string brand = Console.ReadLine();
 
         Console.WriteLine("Matching Appliances:");
+
         // create new list with all items from appliance list that match user input
         // make user input case-insensitive by comparing using OrdinalIgnoreCase
         var newList = appliances.FindAll(item => string.Equals(item.Brand, brand, StringComparison.OrdinalIgnoreCase));
+
 
         // display appliance information for found items
         foreach (Appliance appliance in newList)
@@ -50,7 +115,7 @@ while (true)
 
             Console.WriteLine("Matching refrigerators:");
             // create new list with all items from appliance list that match user input (cast Refrigerator class)
-            var newList = appliances.FindAll(item => item is Refrigerator refrigerator && refrigerator.DoorsNumber == numberofDoors);
+            var newList = appliances.FindAll(item => item is Refrigerator refrigerator && refrigerator.door == numberofDoors);
 
             // display appliance information for found items
             foreach (Appliance appliance in newList)
@@ -62,11 +127,11 @@ while (true)
         else if (applianceOption == "2")
         {
             Console.WriteLine("Enter battery voltage value - 18 V (low) or 24 V (high):");
-            string voltageValue = Console.ReadLine();
+            int voltageValue = int.Parse(Console.ReadLine());
 
             Console.WriteLine("Matching vacuums:");
             // create new list with all items from appliance list that match user input (cast Vacuum class)
-            var newList = appliances.FindAll(item => item is Vacuum vacuum && vacuum.Voltage == voltageValue);
+            var newList = appliances.FindAll(item => item is Vacuum vacuum && vacuum.BatteryVoltage == voltageValue);
 
             // display appliance information for found items
             foreach (Appliance appliance in newList)
@@ -100,7 +165,7 @@ while (true)
             Console.WriteLine("Matching dishwashers:");
             // create new list with all items from appliance list that match user input (cast Dishwasher class)
             // make user input case-insensitive by comparing using OrdinalIgnoreCase
-            var newList = appliances.FindAll(item => item is Dishwasher dishwasher && string.Equals(dishwasher.SoundRating, sound, StringComparison.OrdinalIgnoreCase));
+            var newList = appliances.FindAll(item => item is Dishwasher dishwasher && string.Equals(dishwasher.sound, sound, StringComparison.OrdinalIgnoreCase));
 
             // display appliance information for found items
             foreach (Appliance appliance in newList)
@@ -108,7 +173,7 @@ while (true)
                 Console.WriteLine(appliance);
             }
         }
-        
+
         // display error message if anything other than 1-5 entered
         else
         {
@@ -126,10 +191,12 @@ while (true)
         while (i < length)
         {
             Random random = new Random();
-            appliances[random.Next(1, appliances.Count)].ToString();
+            Console.WriteLine(appliances[random.Next(1, appliances.Count)].ToString());
+            i++;
+
         }
     }
-    else if(option == "5")
+    else if (option == "5")
     {
         // INSERT SAVE LIST TO FILE HERE
         break;
@@ -139,4 +206,3 @@ while (true)
         Console.WriteLine("Please enter valid option");
     }
 }
-

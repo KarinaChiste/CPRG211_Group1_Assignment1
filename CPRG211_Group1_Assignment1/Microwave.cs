@@ -46,6 +46,24 @@
                    $"Capacity: {Capacity.ToString("f1")}\n" +
                    $"Room Type: {RoomType}";
         }
+
+
+    // FormatToFile method
+    public string FormatToFile()
+    {
+        return $"{ItemNumber};{Brand};{Quantity};{Wattage};{Colour};{Price};{Capacity};{RoomType}";
     }
 
-
+    // ToString method
+    public override string ToString()
+    {
+        return $"Item number: {ItemNumber}\n" +
+               $"Brand: {Brand}\n" +
+               $"Quantity: {Quantity}\n" +
+               $"Wattage: {Wattage}\n" +
+               $"Colour: {Colour}\n" +
+               $"Price: {Price}\n" +
+               $"Capacity: {Capacity}\n" +
+               $"Room Type: {RoomType}";
+    }
+}
