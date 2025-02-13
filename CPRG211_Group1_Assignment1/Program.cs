@@ -70,7 +70,7 @@ while (true)
         if (appliance.Quantity > 0)
         {
             appliance.Quantity--;
-            Console.WriteLine($"Applicane {itemNumber} has been checked out.");
+            Console.WriteLine($"Appliance {itemNumber} has been checked out.");
         }
         else
         {
