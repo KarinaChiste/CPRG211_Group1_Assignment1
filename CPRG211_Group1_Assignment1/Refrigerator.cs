@@ -23,7 +23,8 @@ namespace CPRG211_Group1_Assignment1
         public int Width { get; set; }
 
         public Refrigerator(string itemNumber, string brand, int quantity, int wattage, string colour, double price, string doors, int height, int width) :
-            base(itemNumber, brand,quantity, wattage, colour, price)
+            base(itemNumber, brand, quantity, wattage, colour, price)
+
         {
             //this.ItemNumber = itemNumber;
             //this.Brand = brand;
@@ -33,19 +34,19 @@ namespace CPRG211_Group1_Assignment1
             //this.Price = price;
             this.Height = height;
             this.Width = width;
-            if(doors == "2")
+            if (doors == "2")
             {
-                
+
                 this.DoorsNumber = "Double Doors";
             }
-            else if(doors == "3")
+            else if (doors == "3")
             {
-             
+
                 this.DoorsNumber = "Three Doors";
             }
             else
             {
-                
+
                 this.DoorsNumber = "Four Doors";
             }
             door = doors;

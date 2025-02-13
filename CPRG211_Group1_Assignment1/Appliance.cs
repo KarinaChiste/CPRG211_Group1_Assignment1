@@ -10,7 +10,7 @@ namespace CPRG211_Group1_Assignment1
     {
         public string ItemNumber { get; set; }
         public string Brand { get; set; }
-        
+
         public int Wattage { get; set; }
         public string Colour { get; set; }
         public double Price { get; set; }

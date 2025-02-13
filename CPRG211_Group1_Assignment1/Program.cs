@@ -53,7 +53,30 @@ while (true)
 
     if (option == "1")
     {
-        //INSERT CHECK OUT APPLIANCE HERE
+        // takes user input for item number
+        Console.Write("Enter the item number of an appliance: ");
+        string itemNumber = Console.ReadLine();
+
+        // searches appliances list and compares if user input exists
+        Appliance appliance = appliances.Find(a => a.ItemNumber == itemNumber);
+
+        // if statements to validate if the item number exists or not
+        if (appliance == null)
+        {
+            Console.WriteLine("No appliances found with that item number.");
+            continue;
+        }
+
+        if (appliance.Quantity > 0)
+        {
+            appliance.Quantity--;
+            Console.WriteLine($"Applicane {itemNumber} has been checked out.");
+        }
+        else
+        {
+            Console.WriteLine("The appliance is not available to be checked out.");
+        }
+
     }
 
     else if (option == "2")
@@ -150,7 +173,7 @@ while (true)
                 Console.WriteLine(appliance);
             }
         }
-        
+
         // display error message if anything other than 1-5 entered
         else
         {
@@ -170,10 +193,10 @@ while (true)
             Random random = new Random();
             Console.WriteLine(appliances[random.Next(1, appliances.Count)].ToString());
             i++;
-            
+
         }
     }
-    else if(option == "5")
+    else if (option == "5")
     {
         // INSERT SAVE LIST TO FILE HERE
         break;
@@ -183,4 +206,3 @@ while (true)
         Console.WriteLine("Please enter valid option");
     }
 }
-

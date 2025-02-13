@@ -23,10 +23,11 @@ namespace CPRG211_Group1_Assignment1
         //public int Wattage { get; set; }
         //public string Colour { get; set; }
         //public double Price { get; set; }
-        public string Feature {  get; set; }
-        public string SoundRating {  get; set; }
+        public string Feature { get; set; }
+        public string SoundRating { get; set; }
 
-        public Dishwasher(string itemNumber, string brand, int quantity, int wattage, string colour, double price, string feature, string soundRating):
+
+        public Dishwasher(string itemNumber, string brand, int quantity, int wattage, string colour, double price, string feature, string soundRating) :
             base(itemNumber, brand, quantity, wattage, colour, price)
         {
             //this.ItemNumber = itemNumber;
@@ -36,11 +37,11 @@ namespace CPRG211_Group1_Assignment1
             //this.Colour = colour;
             //this.Price = price;
             this.Feature = feature;
-            if(soundRating == "Qt")
+            if (soundRating == "Qt")
             {
                 this.SoundRating = "Quietest";
             }
-            else if(soundRating == "Qr")
+            else if (soundRating == "Qr")
             {
                 this.SoundRating = "Quieter";
             }
