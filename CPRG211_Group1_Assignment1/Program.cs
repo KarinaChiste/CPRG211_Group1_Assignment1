@@ -45,7 +45,7 @@ List<Appliance> appliances = ReadFile();
 
 while (true)
 {
-    Console.WriteLine("Welcome to Modern Appliances!");
+    Console.WriteLine("\nWelcome to Modern Appliances!");
     Console.WriteLine("How May We Assist You?");
     Console.WriteLine("1 - Check out appliance \n2 - Find appliances by brand \n3 - Display appliances by type \n4 - Produce random appliance List \n5 - Save & exit");
     Console.WriteLine("Enter option: ");
