@@ -25,5 +25,10 @@ namespace CPRG211_Group1_Assignment1
             this.Price = price;
             this.Quantity = quantity;
         }
+
+        public virtual string FormatToFile()
+        {
+            return "";
+        }
     }
 }

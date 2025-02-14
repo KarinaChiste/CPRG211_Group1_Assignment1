@@ -65,5 +65,9 @@ namespace CPRG211_Group1_Assignment1;
         return $" ItemNumber: {ItemNumber} \nBrand: {Brand} \nQuantity: {Quantity} \nWattage: {Wattage} \nColour: {Colour} \nPrice: {Price} \nFeature:{Feature} \nSoundRating: {SoundRating}";
     }
 
+    public override string FormatToFile()
+    {
+        return $"{ItemNumber};{Brand};{Quantity};{Wattage};{Colour};{Price};{Feature};{sound}";
+    }
 }
 

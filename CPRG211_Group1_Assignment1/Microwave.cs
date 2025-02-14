@@ -31,9 +31,9 @@
     }
 
         // FormatToFile method
-        public string FormatToFile()
+        public override string FormatToFile()
         {
-            return $"{ItemNumber};{Brand};{Quantity};{Wattage};{Colour};{Price};{Capacity};{RoomType}";
+            return $"{ItemNumber};{Brand};{Quantity};{Wattage};{Colour};{Price};{Capacity};{room}";
         }
         
         // ToString method

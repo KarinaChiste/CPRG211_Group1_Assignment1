@@ -212,7 +212,7 @@ while (true)
         {
             foreach (Appliance appliance in appliances)
             {
-                writer.WriteLine(appliance.ToString());
+                writer.WriteLine(appliance.FormatToFile());
             }
         }
         Console.WriteLine("Appliance list has been saved. Exiting...");
