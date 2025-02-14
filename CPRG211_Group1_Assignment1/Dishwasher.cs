@@ -54,7 +54,7 @@ namespace CPRG211_Group1_Assignment1;
             {
                 this.SoundRating = "Moderate";
             }
-            sound = soundRating
+            sound = soundRating;
         
 
     }

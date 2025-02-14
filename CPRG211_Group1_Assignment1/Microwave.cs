@@ -1,6 +1,6 @@
 ﻿namespace CPRG211_Group1_Assignment1;
 
-    internal class Microwave : Appliance
+    public class Microwave : Appliance
     {
         // create Microwave attributes
         private double _capacity;
@@ -14,7 +14,7 @@
         //public string DisplayRoomType { get; set; }
 
         // constructor
-        public Microwave(string itemNumber, int quantity, string brand, int wattage, string colour, double price, double capacity, string roomType)
+        public Microwave(string itemNumber, string brand, int quantity, int wattage, string colour, double price, double capacity, string roomType)
             : base(itemNumber, brand, quantity, wattage, colour, price)
         {
             this.Capacity = capacity;
@@ -48,4 +48,5 @@
                    $"Capacity: {Capacity.ToString("f1")}\n" +
                    $"Room Type: {RoomType}";
         }
+
 }
