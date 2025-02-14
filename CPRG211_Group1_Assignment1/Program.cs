@@ -36,7 +36,7 @@ List<Appliance> ReadFile()
         }
 
     }
-
+    read.Close();
     return appliances;
 }
 
@@ -127,7 +127,16 @@ while (true)
         else if (applianceOption == "2")
         {
             Console.WriteLine("Enter battery voltage value - 18 V (low) or 24 V (high):");
-            int voltageValue = int.Parse(Console.ReadLine());
+            string voltageValue = Console.ReadLine();
+            if (voltageValue == "18")
+            {
+                voltageValue = "Low";
+            }
+
+            else if (voltageValue == "24")
+            {
+                voltageValue = "High";
+            }
 
             Console.WriteLine("Matching vacuums:");
             // create new list with all items from appliance list that match user input (cast Vacuum class)
@@ -199,6 +208,14 @@ while (true)
     else if (option == "5")
     {
         // INSERT SAVE LIST TO FILE HERE
+        using (StreamWriter writer = new StreamWriter(PATH))
+        {
+            foreach (Appliance appliance in appliances)
+            {
+                writer.WriteLine(appliance.ToString());
+            }
+        }
+        Console.WriteLine("Appliance list has been saved. Exiting...");
         break;
     }
     else

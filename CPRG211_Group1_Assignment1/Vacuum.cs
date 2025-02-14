@@ -10,7 +10,7 @@ namespace CPRG211_Group1_Assignment1
     {
         public int Quantity { get; set; }
         public string Grade { get; set; }
-        public int BatteryVoltage { get; set; } // low = 18, high = 24
+        public string BatteryVoltage { get; set; } // low = 18, high = 24
 
         public Vacuum(string itemNumber, string brand, int quantity, int wattage, string colour, double price, string grade, int batteryVoltage) :
             base(itemNumber, brand, quantity, wattage, colour, price)
@@ -18,7 +18,14 @@ namespace CPRG211_Group1_Assignment1
         {
             this.Quantity = quantity;
             this.Grade = grade;
-            this.BatteryVoltage = batteryVoltage;
+            if (batteryVoltage == 18)
+            {
+                this.BatteryVoltage = "Low";
+            }
+            else if (batteryVoltage == 24)
+            {
+                this.BatteryVoltage = "High";
+            }
         }
 
         public override string ToString()
