@@ -8,6 +8,7 @@
         private string _roomType;
         public double Capacity { get { return _capacity; } set { _capacity = value; } }
         public string RoomType { get { return _roomType; } set { _roomType = value; } }
+        public string room;
         //public string RoomTypeKitchen = "K";
         //public string RoomTypeWorkSite = "W";
         //public string DisplayRoomType { get; set; }
@@ -26,6 +27,7 @@
             {
                 this.RoomType = "Work Site";
             }
+            room = roomType;
     }
 
         // FormatToFile method
@@ -47,7 +49,4 @@
                    $"Room Type: {RoomType}";
         }
 
-
-    
-   
 }

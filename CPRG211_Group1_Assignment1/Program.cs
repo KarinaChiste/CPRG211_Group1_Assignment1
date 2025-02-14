@@ -157,7 +157,7 @@ while (true)
             Console.WriteLine("Matching microwaves:");
             // create new list with all items from appliance list that match user input (cast Microwave class)
             // make user input case-insensitive by comparing using OrdinalIgnoreCase
-            var newList = appliances.FindAll(item => item is Microwave microwave && string.Equals(microwave.RoomType, microwaveRoom, StringComparison.OrdinalIgnoreCase));
+            var newList = appliances.FindAll(item => item is Microwave microwave && string.Equals(microwave.room, microwaveRoom, StringComparison.OrdinalIgnoreCase));
 
             // display appliance information for found items
             foreach (Appliance appliance in newList)
